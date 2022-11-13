@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binokool.Web", "..\Binokool.Web\Binokool.Web.csproj", "{441F1B84-4831-4BED-8AFB-DDAF94DCF66B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AB8675BA-E0AA-4363-965F-B1A18F4EE995}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binokool.Services.ProductAPI", "..\Binokool.Services.ProductAPI\Binokool.Services.ProductAPI.csproj", "{D91865EA-BD2A-4A79-9462-E2933F823DEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{7C4086C4-7591-4449-96FA-23B735C1D4E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorize.Services.IdentityServer", "Authorize.Services.IdentityServer\Authorize.Services.IdentityServer.csproj", "{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{441F1B84-4831-4BED-8AFB-DDAF94DCF66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441F1B84-4831-4BED-8AFB-DDAF94DCF66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441F1B84-4831-4BED-8AFB-DDAF94DCF66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441F1B84-4831-4BED-8AFB-DDAF94DCF66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D91865EA-BD2A-4A79-9462-E2933F823DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91865EA-BD2A-4A79-9462-E2933F823DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91865EA-BD2A-4A79-9462-E2933F823DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91865EA-BD2A-4A79-9462-E2933F823DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{441F1B84-4831-4BED-8AFB-DDAF94DCF66B} = {7C4086C4-7591-4449-96FA-23B735C1D4E8}
+		{D91865EA-BD2A-4A79-9462-E2933F823DEC} = {AB8675BA-E0AA-4363-965F-B1A18F4EE995}
+		{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A} = {AB8675BA-E0AA-4363-965F-B1A18F4EE995}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1DDA501-8E58-4127-A11D-52D8141F1A52}
+	EndGlobalSection
+EndGlobal

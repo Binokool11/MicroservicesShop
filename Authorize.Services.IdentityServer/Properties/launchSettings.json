@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "Authorize.Services.IdentityServer": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchUrl": "Home/Site",
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7171;http://localhost:5171",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
