@@ -373,7 +373,7 @@ namespace IdentityServerHost.Quickstart.UI
                             new Claim(JwtClaimTypes.Name, model.Username),
                             new Claim(JwtClaimTypes.Email, model.Email),
                             new Claim(JwtClaimTypes.WebSite, "http://"+model.Username+".com"),
-                            new Claim(JwtClaimTypes.Role,"User"),
+                            new Claim(JwtClaimTypes.Role,StaticDetails.CUSTOMER),
                             new Claim(JwtClaimTypes.Subject, Guid.NewGuid().ToString())
                     });
 

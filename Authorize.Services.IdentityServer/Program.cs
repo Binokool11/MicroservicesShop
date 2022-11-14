@@ -1,7 +1,8 @@
 using Authorize.Services.IdentityServer;
 using Authorize.Services.IdentityServer.DbContext;
 using Authorize.Services.IdentityServer.Models;
-using Duende.IdentityServer.AspNetIdentity;
+using Authorize.Services.IdentityServer.Services;
+using Duende.IdentityServer.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,6 +33,7 @@ builder.Services.AddIdentityServer()
                 .AddInMemoryIdentityResources(StaticDetails.identityResources())
                 .AddDeveloperSigningCredential();
 
+builder.Services.AddTransient<IProfileService, ProfileService>();
 var app = builder.Build();
 
 

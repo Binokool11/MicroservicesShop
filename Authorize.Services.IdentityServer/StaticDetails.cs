@@ -17,7 +17,8 @@ namespace Authorize.Services.IdentityServer
 
         public static IEnumerable<ApiScope> apiScopes() => new List<ApiScope>
         {
-            new ApiScope("ProductAPI")
+            new ApiScope("ProductAPI"),
+            new ApiScope("binokool","Binokool Web")
         };
 
         public static IEnumerable<ApiResource> apiResources() => new List<ApiResource>
