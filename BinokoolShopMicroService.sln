@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binokool.Services.ProductAP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{7C4086C4-7591-4449-96FA-23B735C1D4E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorize.Services.IdentityServer", "Authorize.Services.IdentityServer\Authorize.Services.IdentityServer.csproj", "{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binokool.Services.IdentityServer", "Authorize.Services.IdentityServer\Binokool.Services.IdentityServer.csproj", "{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binokool.Services.ShoppingCartAPI", "Binokool.Services.ShoppingCartAPI\Binokool.Services.ShoppingCartAPI.csproj", "{76CCE150-53D0-4A36-BE98-A3D7D274F710}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76CCE150-53D0-4A36-BE98-A3D7D274F710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76CCE150-53D0-4A36-BE98-A3D7D274F710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76CCE150-53D0-4A36-BE98-A3D7D274F710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76CCE150-53D0-4A36-BE98-A3D7D274F710}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{441F1B84-4831-4BED-8AFB-DDAF94DCF66B} = {7C4086C4-7591-4449-96FA-23B735C1D4E8}
 		{D91865EA-BD2A-4A79-9462-E2933F823DEC} = {AB8675BA-E0AA-4363-965F-B1A18F4EE995}
 		{95AD07DE-1FCD-4ED5-AC0F-E30ADA7AC90A} = {AB8675BA-E0AA-4363-965F-B1A18F4EE995}
+		{76CCE150-53D0-4A36-BE98-A3D7D274F710} = {AB8675BA-E0AA-4363-965F-B1A18F4EE995}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1DDA501-8E58-4127-A11D-52D8141F1A52}

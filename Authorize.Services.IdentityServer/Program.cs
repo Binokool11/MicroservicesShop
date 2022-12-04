@@ -2,6 +2,7 @@ using Authorize.Services.IdentityServer;
 using Authorize.Services.IdentityServer.DbContext;
 using Authorize.Services.IdentityServer.Models;
 using Authorize.Services.IdentityServer.Services;
+using Duende.IdentityServer.AspNetIdentity;
 using Duende.IdentityServer.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,11 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<SecurityStampValidatorOptions>(opt =>
+{
+    opt.OnRefreshingPrincipal = SecurityStampValidatorCallback.UpdatePrincipal;
+});
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
