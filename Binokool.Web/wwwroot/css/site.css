@@ -1,0 +1,46 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #747373e9;
+}
+
+img.icon {
+    width:30px;
+}
+
+img.icon-product{
+    width:200px;
+}
+
+.error {
+    color:orangered;
+}
+
+div.error {
+    border:solid red 3px;
+    background-color:burlywood;
+}
+
+
+div.card {
+    border: solid black 1px;
+    border-radius: 3px 4px;
+}
+
+.text-justify{
+    text-align:justify;
+}

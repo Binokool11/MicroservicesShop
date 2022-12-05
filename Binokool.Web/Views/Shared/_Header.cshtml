@@ -1,0 +1,15 @@
+﻿<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white p-0">
+        <div class="container-fluid bg-dark">
+            <img src="~/img/favicon.png" class="icon" />
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index" class="text-light">@ViewBag.Title</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                @await Html.PartialAsync("_NavBar")
+            </div>
+        </div>
+    </nav>
+</header>
