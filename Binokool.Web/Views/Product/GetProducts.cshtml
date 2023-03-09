@@ -1,22 +1,23 @@
 ﻿@model IEnumerable<ProductDto>
 
-<div class="row m-2">
-    <div class="col-sm-6">
-        <h3>List products</h3>
+<div class="container">
+    <div class="title__table">
+        <div class="title__table__column title__list__products">Список продуктов</div>
+        <div class="title__table__column">
+            <a asp-action="CreateProduct">
+                <img src="/img/plus.png" alt="add" class="icon">
+                <p>Добавить продукт</p>
+            </a>
+        </div>
     </div>
-    <div class="col-sm-6">
-        <a asp-action="CreateProduct" class="btn-success btn"><img class="icon" src="/img/plus.png" /> Add new product</a>
-    </div>
-</div>
-<div class="row">
-    <table class="table table-bordered">
+    <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Edit or delete product</th>
+                <th>Название</th>
+                <th>Категория</th>
+                <th>Цена</th>
+                <th>Удаление и изменение продукта</th>
             </tr>
         </thead>
         <tbody>
@@ -28,8 +29,8 @@
                     <td>@productDto.CategoryName</td>
                     <td>@productDto.Price.ToString("c")</td>
                     <td>
-                        <a asp-action="EditProduct" class="btn btn-primary" asp-route-id="@productDto.ProductId"><img class="icon" src="/img/edit.png"/></a>
-                        <a asp-action="DeleteProduct" class="btn btn-danger" asp-route-id="@productDto.ProductId"><img class="icon" src="/img/delete.png"/></a>
+                        <a asp-action="EditProduct" asp-route-id="@productDto.ProductId"><img class="icon icon__edit" src="/img/edit.png"/></a>
+                        <a asp-action="DeleteProduct" asp-route-id="@productDto.ProductId"><img class="icon icon__delete" src="/img/delete.png"/></a>
                     </td>
                 </tr>
             }

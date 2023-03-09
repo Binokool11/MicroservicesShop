@@ -1,56 +1,66 @@
 ﻿@model ProductDto
-<form asp-action="EditProduct" method="post">
-    <input asp-for="ProductId" hidden />
-    <br />
-    <div class="container border p-3">
-        <h1 class="text-info">Create Product</h1>
-        <hr />
-        <div class="row">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="col-2">
-                <label asp-for="Name" class="control-label pt-2" style="font-size:20px;"></label>
-            </div>
-            <div class="col-10 pb-3">
-                <input asp-for="Name" value="@Model.Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="col-2">
-                <label asp-for="CategoryName" class="control-label pt-2" style="font-size:20px;"></label>
-            </div>
-            <div class="col-10 pb-3">
-                <input asp-for="CategoryName" class="form-control" />
-                <span asp-validation-for="CategoryName" class="text-danger"></span>
-            </div>
-            <div class="col-2">
-                <label asp-for="Description" class="control-label pt-2" style="font-size:20px;"></label>
-            </div>
-            <div class="col-10 pb-3">
-                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="col-2">
-                <label asp-for="ImgUrl" class="control-label pt-2" style="font-size:20px;"></label>
-            </div>
-            <div class="col-10 pb-3">
-                <input asp-for="ImgUrl" class="form-control" />
-                <span asp-validation-for="ImgUrl" class="text-danger"></span>
-            </div>
-            <div class="col-2">
-                <label asp-for="Price" class="control-label pt-2" style="font-size:20px;"></label>
-            </div>
-            <div class="col-10 pb-3">
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="col-5 offset-2">
-
-                <a asp-action="GetProducts" class="btn-primary btn form-control ">Back to List</a>
-            </div>
-            <div class="col-5">
-                <input type="submit" value="Update" class="btn btn-info form-control" />
-            </div>
-        </div>
-        <div>
+<div class="container">
+    <div class="row__change__product">
+        <div class="row__change__product__form">
+            <form asp-action="EditProduct" method="post">
+                <input asp-for="ProductId" hidden />
+                <br>
+                    <h1 class="text__info">Edit Product</h1>
+                <div class="row__form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row__form__column">
+                        <label asp-for="Name" class="control__label">Name</label>
+                    </div>
+                    <div class="row__form__column">
+                        <input asp-for="Name" value="@Model.Name" class="form__control" /><br>
+                        <span asp-validation-for="Name" class="text__danger"></span>
+                    </div>
+                </div>
+                <div class="row__form">
+                    <div class="row__form__column">
+                        <label asp-for="CategoryName" class="control__label">CategoryName</label>
+                    </div>
+                    <div class="row__form__column">
+                        <input asp-for="CategoryName" class="form__control" /><br>
+                        <span asp-validation-for="CategoryName" class="text__danger"></span>
+                    </div>
+                </div>
+                <div class="row__form">
+                    <div class="row__form__column">
+                        <label asp-for="Description" class="control__label">Description</label>
+                    </div>
+                    <div class="row__form__column">
+                        <textarea asp-for="Description" class="form__control" rows="5"></textarea><br>
+                        <span asp-validation-for="Description" class="text__danger"></span>
+                    </div>
+                </div>
+                <div class="row__form">
+                    <div class="row__form__column">
+                        <label asp-for="ImgUrl" class="control__label">ImgUrl</label>
+                    </div>
+                    <div class="row__form__column">
+                        <input asp-for="ImgUrl" class="form__control" /><br>
+                        <span asp-validation-for="ImgUrl" class="text__danger"></span>
+                    </div>
+                </div>
+                <div class="row__form">
+                    <div class="row__form__column">
+                        <label asp-for="Price" class="control__label">Price</label>
+                    </div>
+                    <div class="row__form__column">
+                        <input asp-for="Price" class="form__control" /><br>
+                        <span asp-validation-for="Price" class="text__danger"></span>
+                    </div>
+                </div>
+                <div class="row__form">
+                    <div class="row__form__column">
+                        <a asp-action="GetProducts" class="button">Back to List</a>
+                    </div>
+                    <div class="row__form__column">
+                        <input type="submit" value="Update" class="button" />
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</form>
+</div>

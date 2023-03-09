@@ -361,19 +361,19 @@ namespace IdentityServerHost.Quickstart.UI
                     Email = model.Email,
                     EmailConfirmed = true,
                     FirstName = model.FirstName,
-                    LastName = model.LastName
+                    LastName = model.LastName,
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(user, StaticDetails.CUSTOMER);
+                    await _userManager.AddToRoleAsync(user, StaticDetails.ADMIN);
 
                     await _userManager.AddClaimsAsync(user, new Claim[]{
                             new Claim(JwtClaimTypes.Name, model.Username),
                             new Claim(JwtClaimTypes.Email, model.Email),
                             new Claim(JwtClaimTypes.WebSite, "http://"+model.Username+".com"),
-                            new Claim(JwtClaimTypes.Role,StaticDetails.CUSTOMER),
+                            new Claim(JwtClaimTypes.Role,StaticDetails.ADMIN),
                             new Claim(JwtClaimTypes.Subject, Guid.NewGuid().ToString())
                     });
 

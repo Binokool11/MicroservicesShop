@@ -1,15 +1,45 @@
-﻿<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white p-0">
-        <div class="container-fluid bg-dark">
-            <img src="~/img/favicon.png" class="icon" />
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index" class="text-light">@ViewBag.Title</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                @await Html.PartialAsync("_NavBar")
+﻿<header class="header">
+    <div class="container">
+        <div class="header__row">
+            <div class="header__logo header__column">
+                <a asp-controller="Home" asp-action="Index"><h1 class="logo">BINOKOOL</h1></a>
+            </div>
+            <div class="header__search header__column">
+                <form action="#">
+                    <label for="search">
+                    <input type="text" id="search" name="search" placeholder="Поиск..." class="search__input">
+                </form>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="icon header__column">
+                    <a asp-controller="Product" asp-action="GetProducts">
+                        <img src="/img/icon/shopping_card_icon.svg" alt="singin__image">
+                        <p>Продукты</p>
+                    </a>
+                </div>
+            }
+            <div class="icon header__column">
+                @if(User.Identity.IsAuthenticated){
+                    <a asp-controller="Account" asp-action="Logout">
+                        <img src="/img/icon/singin_icon.svg" alt="singin__image">
+                        <p>Выйти</p>
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="Account" asp-action="Login">
+                        <img src="/img/icon/singin_icon.svg" alt="singin__image">
+                        <p>Войти</p>
+                    </a>
+                }
+            </div>
+            <div class="icon header__column" >
+                <a asp-controller="" asp-action="">
+                    <img src="/img/icon/shopping_card_icon.svg" alt="shopping__card__image">
+                    <p>Корзина</p>
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
 </header>

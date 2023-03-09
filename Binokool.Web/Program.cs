@@ -39,7 +39,7 @@ builder.Services.AddAuthentication(opt =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
+app.UseRouting();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -51,7 +51,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseDefaultFiles();
-app.UseRouting();
+
 
 app.UseAuthentication();
 app.UseAuthorization();

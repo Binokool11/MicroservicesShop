@@ -133,7 +133,7 @@ namespace Binokool.Web.Controllers
             ResponseDto response = await productServices.GetProductByIdAsync<ResponseDto>(productId,"");
             if(response.IsSuccess && response.Result != null)
             {
-                ProductDto productDto = JsonConvert.DeserializeObject<ProductDto>(Convert.ToString(response.Result));
+                ProductDto? productDto = JsonConvert.DeserializeObject<ProductDto>(Convert.ToString(response.Result));
                 if (productDto != null)
                 {
                     ProductViewModel model = new ProductViewModel { Product = productDto };
