@@ -1,0 +1,16 @@
+version: "3"
+services:
+  frontend:
+   build: Binokool.Web/
+   command: dotnet Binokool.Web.dll
+   network_mode: host
+   ports:
+      - 5000:5000
+  backend:
+   build: Binokool.Services.ProductAPI/
+   command: dotnet Binokool.Services.ProductAPI.dll
+   network_mode: host
+   ports:
+      - 5001:5001
+   depends_on:
+      - frontend

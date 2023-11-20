@@ -5,26 +5,28 @@
         <h3 class="product__title_text">Хиты продаж</h3>
     </div>
     <div class="product__row">
-        @foreach (var item in Model.Products)
-        {
-            <div class="product__column__item">
-                <div class="product__column__item__row">
-                    <div class="product__column__item__row__column">
-                        <img src="@item.ImgUrl" alt="Product" class="img__item">
-                    </div>
-                    <div class="product__column__item__row__column">
-                        <p class="item__name">@item.Name</p>
-                        <p class="price">@item.Price.ToString("c")</p>
-                        <p>
-                            <a class="button" href="/Product/AboutProduct?productId=23">Подробности</a>
-                        </p>
-                        <p>
-                            <a class="button">В корзину</a>
-                        </p>
+        @if (Model != null && Model.Products != null){
+            @foreach (var item in Model.Products)
+            {
+                <div class="product__column__item">
+                    <div class="product__column__item__row">
+                        <div class="product__column__item__row__column">
+                            <img src="@item.ImgUrl" alt="Product" class="img__item">
+                        </div>
+                        <div class="product__column__item__row__column">
+                            <p class="item__name">@item.Name</p>
+                            <p class="price">@item.Price.ToString("c")</p>
+                            <p>
+                                <a class="button" href="/Product/AboutProduct?productId=@item.ProductId">Подробности</a>
+                            </p>
+                            <p>
+                                <a class="button">В корзину</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
+       }
     </div>
 </div>
 <div class="about__company">

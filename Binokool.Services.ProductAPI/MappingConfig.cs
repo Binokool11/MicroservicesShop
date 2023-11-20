@@ -4,7 +4,6 @@ using Binokool.Services.ProductAPI.Models.Dtos;
 
 namespace Binokool.Services.ProductAPI
 {
-    //Необходим для преобразования объекта ProductDto в Product и наоборот
     public class MappingConfig
     {
         /// <summary>
@@ -15,8 +14,7 @@ namespace Binokool.Services.ProductAPI
         {
             var mappingConfig = new MapperConfiguration(config =>
             {
-                config.CreateMap<ProductDto, Product>();
-                config.CreateMap<Product, ProductDto>();
+                config.CreateMap<ProductDto, Product>().ReverseMap();
             });
             return mappingConfig;
         }

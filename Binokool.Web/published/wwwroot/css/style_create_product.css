@@ -1,0 +1,48 @@
+﻿.title__list__products {
+    font-size: 30px;
+}
+
+.title__table {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 15px 0;
+}
+
+.title__table__column {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom:30px;
+    font-size:20px;
+}
+
+td {
+    border: 3px wheat solid;
+    padding: 10px;
+    text-align:center;
+}
+
+th {
+    border: 3px wheat solid;
+    padding: 10px;
+}
+
+a.add__button > p{
+    font-size:30px;
+}
+
+.icon__delete{
+    background-color:darkred;
+    border-radius:3px;
+    padding:5px;
+}
+
+.icon__edit {
+    background-color: green;
+    border-radius: 3px;
+    padding: 5px;
+}

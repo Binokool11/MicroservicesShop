@@ -1,7 +1,7 @@
 ﻿using Binokool.Web.Models;
 using Binokool.Web.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace Binokool.Web.Controllers
 {
@@ -17,18 +17,20 @@ namespace Binokool.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
+            
             List<ProductDto> products = new List<ProductDto>();
             ResponseDto response = await productServices.GetAllProductsAsync<ResponseDto>(string.Empty);
+            HomeViewModel model = new HomeViewModel();
             if (response.IsSuccess && response.Result != null)
             {
-                products = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(response.Result));
+                products = JsonSerializer.Deserialize<List<ProductDto>>(Convert.ToString(response.Result));
                 if (products != null)
                 {
-                    HomeViewModel model = new HomeViewModel { Products = products };
+                    model = new HomeViewModel { Products = products };
                     return View(model);
                 }
             }
-            return View();
+            return View(model);
         }
 
     }

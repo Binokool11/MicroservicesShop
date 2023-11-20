@@ -29,6 +29,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opt =>
     opt.Password.RequireLowercase = false;
     opt.Password.RequireDigit = false;
     opt.Password.RequiredLength = 6;
+    opt.Password.RequireNonAlphanumeric = false;
 
 }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 

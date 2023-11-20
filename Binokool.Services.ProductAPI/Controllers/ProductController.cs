@@ -1,4 +1,5 @@
-﻿using Binokool.Services.ProductAPI.Models.Dtos;
+﻿using Binokool.Services.ProductAPI.AbstractForData;
+using Binokool.Services.ProductAPI.Models.Dtos;
 using Binokool.Services.ProductAPI.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,10 +10,10 @@ namespace Binokool.Services.ProductAPI.Controllers
     public class ProductController : ControllerBase
     {
         protected ResponseDto response;
-        private IProductRepository productRepostory;
-        public ProductController(IProductRepository _productRepostory)
+        private DataContext<ProductDto> _productRepostory;
+        public ProductController(DataContext<ProductDto> productRepostory)
         {
-            productRepostory = _productRepostory;
+            _productRepostory = productRepostory;
             response = new ResponseDto();
         }
 
@@ -22,7 +23,7 @@ namespace Binokool.Services.ProductAPI.Controllers
         {
             try
             {
-                IEnumerable<ProductDto> productDtos = await productRepostory.GetProducts();
+                IEnumerable<ProductDto> productDtos = await _productRepostory.GetAllAsync();
                 response.Result = productDtos;
             }
             catch (Exception ex)
@@ -39,7 +40,7 @@ namespace Binokool.Services.ProductAPI.Controllers
         {
             try
             {
-                ProductDto productDto = await productRepostory.GetProductById(id);
+                ProductDto productDto = await _productRepostory.GetAsync(id);
                 response.Result = productDto;
             }
             catch (Exception ex)
@@ -57,7 +58,7 @@ namespace Binokool.Services.ProductAPI.Controllers
         {
             try
             {
-                ProductDto currentProductDto = await productRepostory.CreateUpdateProduct(productDto);
+                ProductDto currentProductDto = await _productRepostory.CreateOrUpdateAsync(productDto);
                 response.Result = productDto;
             }
             catch (Exception ex)
@@ -75,7 +76,7 @@ namespace Binokool.Services.ProductAPI.Controllers
         {
             try
             {
-                ProductDto currentProductDto = await productRepostory.CreateUpdateProduct(productDto);
+                ProductDto currentProductDto = await _productRepostory.CreateOrUpdateAsync(productDto);
                 response.Result = productDto;
             }
             catch (Exception ex)
@@ -92,7 +93,7 @@ namespace Binokool.Services.ProductAPI.Controllers
         {
             try
             {
-                bool isSuccess = await productRepostory.DeleteProduct(id);
+                bool isSuccess = await _productRepostory.DeleteAsync(id);
                 response.Result = isSuccess;
             }
             catch (Exception ex)

@@ -12,6 +12,9 @@ public class RegisterViewModel
     public string LastName { get; set; }
     [Required]
     public string Password { get; set; }
+    [Compare("Password",ErrorMessage = "Password mismatch")]
+    public string ConfirmPassword { get; set; }
+    public string Role { get; set; }
 
     public string ReturnUrl { get; set; }
 

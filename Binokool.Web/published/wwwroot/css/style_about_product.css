@@ -1,0 +1,30 @@
+﻿.about__product__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.about__product__row__column {
+    flex: 0 1 50%;
+}
+
+.about__product__name {
+    font-size: 35px;
+    margin: 10px;
+    text-align:center;
+}
+
+.about__product__order {
+    text-align: center;
+}
+
+.about__product__description {
+    text-align: justify;
+    line-height:20px;
+    text-indent:30px;   
+}
+
+.about__product__img{
+    text-align:center;
+}

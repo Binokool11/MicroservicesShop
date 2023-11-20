@@ -1,15 +1,16 @@
 using AutoMapper;
 using Binokool.Services.ProductAPI;
+using Binokool.Services.ProductAPI.AbstractForData;
 using Binokool.Services.ProductAPI.DbContexts;
+using Binokool.Services.ProductAPI.Models.Dtos;
 using Binokool.Services.ProductAPI.Repository;
+using Binokool.Services.ProductAPI.Repository.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 
 builder.Services.AddControllers();
 
@@ -39,7 +40,7 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
     {
         Description = "Enter bearer",
-        Name = "Autrization",
+        Name = "Autorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
         Scheme = JwtBearerDefaults.AuthenticationScheme
@@ -63,7 +64,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
 string connect = builder.Configuration.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value;
@@ -71,13 +71,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
     opt.UseSqlServer(connect);
 });
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<DataContext<ProductDto>>();
+builder.Services.AddScoped<IRepository<ProductDto>,ProductRepository<ProductDto>>();
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

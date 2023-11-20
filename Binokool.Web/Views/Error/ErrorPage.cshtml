@@ -1,19 +1,23 @@
 ﻿@model MessagesError
-<div class="row error">
-    @if (Model.Errors != null)
-    {
-        @foreach(var item in Model.Errors)
+<div class="container">
+    <div class="error__column">
+        <div class="error__column__row">
+        @if (Model.Errors != null)
         {
-            <div class="row">
-                <p class="error">@item</p>
-            </div>
+            <ol>
+            @foreach(var item in Model.Errors)
+            {
+                <li class="error">@item</li>
+            }
+            </ol>
         }
-    }
-    else
-    {
-        <div class="row">Errors is null</div>
-    }
-</div>
-<div class="row">
-    <a asp-action="Index" asp-controller="Home">Back to main</a>
+        else
+        {
+            <p>Errors is null</p>
+        }
+        </div>
+        <div class="error__column__row">
+            <a asp-action="Index" asp-controller="Home" class="button">Back to main</a>
+        </div>
+    </div>
 </div>

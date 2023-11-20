@@ -11,9 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binokool.Services.IdentityS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binokool.Services.ShoppingCartAPI", "Binokool.Services.ShoppingCartAPI\Binokool.Services.ShoppingCartAPI.csproj", "{76CCE150-53D0-4A36-BE98-A3D7D274F710}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binokool.Web", "Binokool.Web\Binokool.Web.csproj", "{E134136F-A1C1-442B-B970-48E335008D4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binokool.Web", "Binokool.Web\Binokool.Web.csproj", "{E134136F-A1C1-442B-B970-48E335008D4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binokool.Services.ProductAPI", "Binokool.Services.ProductAPI\Binokool.Services.ProductAPI.csproj", "{18356495-ADFB-477F-A38A-652DC90D76F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binokool.Services.ProductAPI", "Binokool.Services.ProductAPI\Binokool.Services.ProductAPI.csproj", "{18356495-ADFB-477F-A38A-652DC90D76F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3A73CEFF-C88A-4C5B-A6C8-25AA7CF49BDD}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
